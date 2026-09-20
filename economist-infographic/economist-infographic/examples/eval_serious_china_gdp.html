@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Two shocks and a long slowdown have reset China's growth to 5%</title>
+<!--
+  Mood: newspaper-serious
+  Title font: Milo TE / Officina (web fallback: Source Serif Pro / Georgia)
+  Sans  font: Econ Sans             (web fallback: Inter / system sans)
+  Protagonist series: #E3120B Economist Red
+  Composition rule: red appears ONLY in (a) flag + 2px top border and (b) protagonist series line + data points.
+  No red in title, kicker, standfirst, source, axis, or annotations.
+-->
+<style>
+  :root {
+    --red:    #E3120B;
+    --ink:    #1A1719;
+    --grey-3: #5E5E60;
+    --grey-5: #525254;
+    --grey-35:#696A6C;
+    --bg:     #FFFFFF;
+    --serif: 'Milo TE','Officina','Source Serif Pro',Georgia,'Times New Roman',serif;
+    --sans:  'Econ Sans','Inter','Calibri','Segoe UI',Arial,sans-serif;
+  }
+  html, body { margin: 0; padding: 0; background: var(--bg); }
+  body {
+    font-family: var(--sans); color: var(--ink);
+    -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision;
+  }
+  .chart-block {
+    width: 640px; margin: 24px auto; padding: 16px;
+    position: relative; background: var(--bg); box-sizing: border-box;
+  }
+  /* 2px red top border running full width of chart block */
+  .chart-block::before {
+    content: ''; position: absolute; top: 0; left: 16px; right: 16px;
+    height: 2px; background: var(--red);
+  }
+  /* 10x30 red flag, top-left, overlapping the 2px top border */
+  .flag {
+    position: absolute; top: 0; left: 16px;
+    width: 10px; height: 30px; background: var(--red);
+  }
+  .kicker {
+    margin: 16px 0 4px 28px;
+    font-family: var(--sans); font-size: 11px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink);
+  }
+  h1 {
+    margin: 0 0 6px 28px;
+    font-family: var(--serif); font-weight: 700;
+    font-size: 22px; line-height: 1.22; color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+  .standfirst {
+    margin: 0 0 14px 28px;
+    font-family: var(--serif); font-style: italic;
+    font-size: 14px; line-height: 1.4; color: var(--grey-5);
+  }
+  .chart { display: block; margin-left: 28px; }
+  .source {
+    margin: 14px 0 0 28px;
+    font-family: var(--sans); font-size: 12px; color: var(--grey-35);
+  }
+
+  /* SVG axis: 1px black ticks, no axis line, no gridlines */
+  .y-tick line, .x-tick line { stroke: var(--ink); stroke-width: 1; }
+  .y-tick text, .x-tick text { font-family: var(--sans); font-size: 12px; fill: var(--ink); }
+
+  /* Protagonist series */
+  .series-line { fill: none; stroke: var(--red); stroke-width: 2.25;
+                 stroke-linejoin: round; stroke-linecap: round; }
+  .point { fill: var(--red); }
+
+  /* Direct labels and italic annotations — both neutral ink/grey, NOT red */
+  .direct-label { font-family: var(--sans); font-size: 12px; font-weight: 700; fill: var(--ink); }
+  .anno         { font-family: var(--sans); font-size: 11.5px; font-style: italic; font-weight: 400; fill: var(--grey-3); }
+  .anno-tick    { stroke: var(--grey-3); stroke-width: 1; fill: none; }
+</style>
+</head>
+<body>
+<div class="chart-block">
+  <div class="flag"></div>
+  <div class="kicker">Finance &amp; economics</div>
+  <h1>Two shocks and a long slowdown have reset China&rsquo;s growth to 5%</h1>
+  <p class="standfirst">Annual real GDP growth, % change on a year earlier, 2010&ndash;24</p>
+
+  <svg class="chart" width="560" height="320" viewBox="0 0 560 320" role="img"
+       aria-label="Line chart of China's annual real GDP growth from 2010 to 2024, falling from 10.6% to a COVID-19 trough of 2.2% in 2020, rebounding to 8.4% in 2021, dipping to 3.0% in 2022 and settling near 5.0% by 2024.">
+
+    <!-- Y-axis ticks: 0,2,4,6,8,10,12  (1px black, no axis line) -->
+    <g class="y-tick">
+      <line x1="40" y1="270"    x2="36" y2="270"    /><text x="32" y="274"    text-anchor="end">0</text>
+      <line x1="40" y1="228.33" x2="36" y2="228.33" /><text x="32" y="232.33" text-anchor="end">2</text>
+      <line x1="40" y1="186.67" x2="36" y2="186.67" /><text x="32" y="190.67" text-anchor="end">4</text>
+      <line x1="40" y1="145"    x2="36" y2="145"    /><text x="32" y="149"    text-anchor="end">6</text>
+      <line x1="40" y1="103.33" x2="36" y2="103.33" /><text x="32" y="107.33" text-anchor="end">8</text>
+      <line x1="40" y1="61.67"  x2="36" y2="61.67"  /><text x="32" y="65.67"  text-anchor="end">10</text>
+      <line x1="40" y1="20"     x2="36" y2="20"     /><text x="32" y="24"     text-anchor="end">12</text>
+    </g>
+
+    <!-- X-axis: ticks at every year (data-point anchors), labels at every other year -->
+    <g class="x-tick">
+      <line x1="40"     y1="270" x2="40"     y2="274" /><text x="40"     y="290" text-anchor="middle">2010</text>
+      <line x1="75.71"  y1="270" x2="75.71"  y2="274" />
+      <line x1="111.43" y1="270" x2="111.43" y2="274" /><text x="111.43" y="290" text-anchor="middle">2012</text>
+      <line x1="147.14" y1="270" x2="147.14" y2="274" />
+      <line x1="182.86" y1="270" x2="182.86" y2="274" /><text x="182.86" y="290" text-anchor="middle">2014</text>
+      <line x1="218.57" y1="270" x2="218.57" y2="274" />
+      <line x1="254.29" y1="270" x2="254.29" y2="274" /><text x="254.29" y="290" text-anchor="middle">2016</text>
+      <line x1="290"    y1="270" x2="290"    y2="274" />
+      <line x1="325.71" y1="270" x2="325.71" y2="274" /><text x="325.71" y="290" text-anchor="middle">2018</text>
+      <line x1="361.43" y1="270" x2="361.43" y2="274" />
+      <line x1="397.14" y1="270" x2="397.14" y2="274" /><text x="397.14" y="290" text-anchor="middle">2020</text>
+      <line x1="432.86" y1="270" x2="432.86" y2="274" />
+      <line x1="468.57" y1="270" x2="468.57" y2="274" /><text x="468.57" y="290" text-anchor="middle">2022</text>
+      <line x1="504.29" y1="270" x2="504.29" y2="274" />
+      <line x1="540"    y1="270" x2="540"    y2="274" /><text x="540"    y="290" text-anchor="middle">2024</text>
+    </g>
+
+    <!-- Protagonist series line -->
+    <polyline class="series-line"
+      points="40,49.17 75.71,70 111.43,105.42 147.14,107.5 182.86,115.83 218.57,124.17 254.29,126.25 290,126.25 325.71,128.33 361.43,145 397.14,224.17 432.86,95 468.57,207.5 504.29,161.67 540,165.83" />
+
+    <!-- Data points -->
+    <circle class="point" cx="40"     cy="49.17"  r="3" />
+    <circle class="point" cx="75.71"  cy="70"     r="3" />
+    <circle class="point" cx="111.43" cy="105.42" r="3" />
+    <circle class="point" cx="147.14" cy="107.5"  r="3" />
+    <circle class="point" cx="182.86" cy="115.83" r="3" />
+    <circle class="point" cx="218.57" cy="124.17" r="3" />
+    <circle class="point" cx="254.29" cy="126.25" r="3" />
+    <circle class="point" cx="290"    cy="126.25" r="3" />
+    <circle class="point" cx="325.71" cy="128.33" r="3" />
+    <circle class="point" cx="361.43" cy="145"    r="3" />
+    <circle class="point" cx="397.14" cy="224.17" r="3" />
+    <circle class="point" cx="432.86" cy="95"     r="3" />
+    <circle class="point" cx="468.57" cy="207.5"  r="3" />
+    <circle class="point" cx="504.29" cy="161.67" r="3" />
+    <circle class="point" cx="540"    cy="165.83" r="3" />
+
+    <!-- Direct labels: bookends of the series -->
+    <text class="direct-label" x="40"  y="40"  text-anchor="middle">10.6%</text>
+    <text class="direct-label" x="540" y="156" text-anchor="middle">5.0%</text>
+
+    <!-- Annotation 1: first COVID-19 shock, 2020 -->
+    <line class="anno-tick" x1="397.14" y1="227" x2="397.14" y2="238" />
+    <text class="anno" x="397.14" y="250" text-anchor="middle">First COVID shock, 2.2%</text>
+
+    <!-- Annotation 2: property crisis + lockdowns, 2022 -->
+    <line class="anno-tick" x1="468.57" y1="210" x2="468.57" y2="238" />
+    <text class="anno" x="468.57" y="250" text-anchor="middle">Property crisis, 3.0%</text>
+
+  </svg>
+
+  <p class="source">Source: National Bureau of Statistics of China</p>
+</div>
+</body>
+</html>

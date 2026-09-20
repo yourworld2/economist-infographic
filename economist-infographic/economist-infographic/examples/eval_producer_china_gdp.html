@@ -1,0 +1,186 @@
+<!doctype html>
+<!-- Font note: proprietary Econ Sans / Econ Sans Condensed are unavailable in the browser.
+     Substituted with Inter / Inter Tight per the Economist Infographic skill's fallback rule. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>China's growth has cooled to less than half its 2010 pace</title>
+<style>
+  :root {
+    --red:   #E3120B;
+    --ink:   #1A1719;
+    --g3:    #5E5E60;
+    --g7:    #ACADB0;
+    --g9:    #CBCCCE;
+    --bg:    #FFFFFF;
+    --sans:  'Econ Sans', 'Inter', 'Calibri', 'Arial', sans-serif;
+    --cond:  'Econ Sans Condensed', 'Inter Tight', 'Arial Narrow', sans-serif;
+  }
+  html, body { margin: 0; padding: 0; background: var(--bg); }
+  body { font-family: var(--sans); color: var(--ink); -webkit-font-smoothing: antialiased; }
+  .wrap { padding: 32px 16px; }
+  .chart-block {
+    position: relative;
+    width: 640px; max-width: 100%;
+    margin: 0 auto;
+    padding: 16px 16px 20px 16px;
+    background: var(--bg);
+    box-sizing: border-box;
+  }
+  /* 2px red top border running full width of chart block */
+  .chart-block::before {
+    content: ''; position: absolute; top: 0; left: 16px; right: 16px;
+    height: 2px; background: var(--red);
+  }
+  /* 10x30 red flag overlapping the top border, flush left */
+  .flag {
+    position: absolute; top: 0; left: 16px;
+    width: 10px; height: 30px; background: var(--red);
+  }
+  .kicker {
+    margin: 16px 0 6px 28px;
+    font-family: var(--sans);
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 0.09em;
+    color: var(--red);
+    text-transform: uppercase;
+  }
+  h1 {
+    margin: 0 0 6px 28px;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+  .standfirst {
+    margin: 0 0 14px 28px;
+    font-family: var(--sans);
+    font-size: 14px;
+    color: #525254;
+  }
+  svg { display: block; margin: 0 0 0 28px; }
+  .source {
+    margin: 14px 0 0 28px;
+    font-family: var(--sans);
+    font-size: 12px;
+    color: #696A6C;
+  }
+  .note {
+    margin: 2px 0 0 28px;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-style: italic;
+    color: #696A6C;
+  }
+  /* SVG primitives */
+  .axis { stroke: var(--ink); stroke-width: 1; fill: none; }
+  .axis-text { font-family: var(--cond); font-size: 11px; fill: var(--ink); }
+  .data-text { font-family: var(--cond); font-size: 12px; font-weight: 700; fill: var(--red); }
+  .annot-text { font-family: var(--sans); font-size: 11px; fill: #525254; }
+  .annot-line { stroke: #525254; stroke-width: 0.5; fill: none; }
+  .point { fill: var(--red); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="chart-block">
+      <div class="flag"></div>
+      <div class="kicker">China's economy</div>
+      <h1>China's growth has cooled to less than half its 2010 pace</h1>
+      <p class="standfirst">Real annual GDP growth, %, 2010&ndash;24</p>
+
+      <svg width="560" height="340" viewBox="0 0 560 340" role="img"
+           aria-label="China real annual GDP growth, 2010 to 2024">
+
+        <!-- subtle shaded band highlighting the covid whiplash (2019–2022) -->
+        <rect x="345" y="40" width="125" height="200"
+              fill="#E3120B" fill-opacity="0.05"/>
+
+        <!-- axes: 1px black ticks, no axis lines beyond ticks -->
+        <line x1="50" y1="40"  x2="50"  y2="240" class="axis"/>
+        <line x1="50" y1="240" x2="540" y2="240" class="axis"/>
+
+        <!-- y-axis tick labels -->
+        <g>
+          <text x="44" y="44"    text-anchor="end" class="axis-text">12</text>
+          <text x="44" y="77.3"  text-anchor="end" class="axis-text">10</text>
+          <text x="44" y="110.7" text-anchor="end" class="axis-text">8</text>
+          <text x="44" y="144"   text-anchor="end" class="axis-text">6</text>
+          <text x="44" y="177.3" text-anchor="end" class="axis-text">4</text>
+          <text x="44" y="210.7" text-anchor="end" class="axis-text">2</text>
+          <text x="44" y="244"   text-anchor="end" class="axis-text">0</text>
+        </g>
+
+        <!-- x-axis tick labels: every other year -->
+        <g>
+          <text x="50"  y="258" text-anchor="middle" class="axis-text">2010</text>
+          <text x="120" y="258" text-anchor="middle" class="axis-text">2012</text>
+          <text x="190" y="258" text-anchor="middle" class="axis-text">2014</text>
+          <text x="260" y="258" text-anchor="middle" class="axis-text">2016</text>
+          <text x="330" y="258" text-anchor="middle" class="axis-text">2018</text>
+          <text x="400" y="258" text-anchor="middle" class="axis-text">2020</text>
+          <text x="470" y="258" text-anchor="middle" class="axis-text">2022</text>
+          <text x="540" y="258" text-anchor="middle" class="axis-text">2024</text>
+        </g>
+
+        <!-- prototype data line, 2px crimson stroke, no smoothing -->
+        <polyline
+          points="50,63.3 85,80 120,108.3 155,110 190,116.7 225,123.3 260,125 295,125 330,126.7 365,140 400,203.3 435,100 470,190 505,153.3 540,156.7"
+          fill="none" stroke="#E3120B" stroke-width="2"
+          stroke-linejoin="round" stroke-linecap="round"/>
+
+        <!-- data points, 3px red circles -->
+        <g class="point">
+          <circle cx="50"  cy="63.3"  r="3"/>
+          <circle cx="85"  cy="80"    r="3"/>
+          <circle cx="120" cy="108.3" r="3"/>
+          <circle cx="155" cy="110"   r="3"/>
+          <circle cx="190" cy="116.7" r="3"/>
+          <circle cx="225" cy="123.3" r="3"/>
+          <circle cx="260" cy="125"   r="3"/>
+          <circle cx="295" cy="125"   r="3"/>
+          <circle cx="330" cy="126.7" r="3"/>
+          <circle cx="365" cy="140"   r="3"/>
+          <circle cx="400" cy="203.3" r="3"/>
+          <circle cx="435" cy="100"   r="3"/>
+          <circle cx="470" cy="190"   r="3"/>
+          <circle cx="505" cy="153.3" r="3"/>
+          <circle cx="540" cy="156.7" r="3"/>
+        </g>
+
+        <!-- 2010 start label: 10.6% -->
+        <g>
+          <line x1="50" y1="56" x2="50" y2="32" class="annot-line"/>
+          <text x="50" y="24" text-anchor="middle" class="data-text">10.6%</text>
+        </g>
+
+        <!-- 2020 covid trough label: 2.2% -->
+        <g>
+          <text x="400" y="226" text-anchor="middle" class="data-text">2.2%</text>
+        </g>
+
+        <!-- 2021 rebound label: 8.4% -->
+        <g>
+          <line x1="435" y1="93" x2="435" y2="68" class="annot-line"/>
+          <text x="435" y="60" text-anchor="middle" class="data-text">8.4%</text>
+        </g>
+
+        <!-- 2024 end label: 5.0% -->
+        <g>
+          <line x1="540" y1="150" x2="540" y2="118" class="annot-line"/>
+          <text x="540" y="110" text-anchor="end" class="data-text">5.0%</text>
+        </g>
+
+        <!-- covid annotation -->
+        <g>
+          <text x="407" y="296" text-anchor="middle" class="annot-text">covid whiplash, 2020&ndash;22</text>
+        </g>
+      </svg>
+
+      <p class="source">Source: National Bureau of Statistics of China</p>
+      <p class="note">Year-on-year real GDP growth; 2024 figure is the official full-year release.</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=640">
+<title>China&rsquo;s annual growth has more than halved in 15 years</title>
+<!--
+  Mood: monochrome-spare (op-ed / research-note voice).
+  Fonts: Milo TE and Econ Sans are not bundled. Free substitutes used:
+    Source Serif Pro (for Milo TE) and Inter (for Econ Sans).
+  Palette:
+    --red    #E3120B   one 1px rule at the top of the chart block (replaces the 10x30 flag).
+    --ink    #1A1719   the protagonist line, all but one data point, tick marks, labels.
+    --accent #1F2E7A   Chicago 30; the only chromatic accent, used exactly once on the 2020 trough.
+  No gridlines. Hairline (0.5px) axis ticks. Background is pure white.
+-->
+<style>
+  :root {
+    --red:    #E3120B;
+    --ink:    #1A1719;   /* London 10 */
+    --accent: #1F2E7A;   /* Chicago 30 */
+    --grey-2: #525254;   /* London 35 */
+    --grey-3: #696A6C;   /* London 35 alt */
+    --bg:     #FFFFFF;
+    --serif:  'Milo TE', 'Officina', 'Source Serif Pro', Georgia, 'Times New Roman', serif;
+    --sans:   'Econ Sans', 'Inter', 'Calibri', Arial, sans-serif;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    font-family: var(--sans);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .chart-block {
+    width: 640px;
+    margin: 32px auto;
+    padding: 16px;
+    position: relative;
+    box-sizing: border-box;
+    background: var(--bg);
+  }
+  /* 1px #E3120B rule, replacing both the 10x30 flag and the 2px top border.
+     Spans the full width of the chart block, inset by the 16px padding. */
+  .red-rule {
+    position: absolute;
+    top: 0;
+    left: 16px;
+    right: 16px;
+    height: 1px;
+    background: var(--red);
+  }
+  .kicker {
+    margin: 16px 0 6px 0;
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  h1 {
+    margin: 0 0 4px 0;
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.2;
+    color: var(--ink);
+    max-width: 580px;
+  }
+  .standfirst {
+    margin: 0 0 18px 0;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--grey-2);
+  }
+  svg {
+    display: block;
+    margin: 0;
+  }
+  .source {
+    margin: 16px 0 0 0;
+    font-family: var(--sans);
+    font-size: 11px;
+    color: var(--grey-3);
+  }
+  .note {
+    margin: 2px 0 0 0;
+    font-family: var(--sans);
+    font-style: italic;
+    font-size: 11px;
+    color: var(--grey-3);
+  }
+  /* SVG-internal styles, kept lean for monochrome-spare. */
+  .tick        { stroke: var(--ink); stroke-width: 0.5; fill: none; }
+  .baseline    { stroke: var(--ink); stroke-width: 0.5; fill: none; }
+  .axis-num    { font-family: var(--sans); font-size: 11px; fill: var(--ink); }
+  .axis-yr     { font-family: var(--sans); font-size: 11px; fill: var(--grey-2); }
+  .series      { fill: none; stroke: var(--ink); stroke-width: 1.25; stroke-linejoin: round; stroke-linecap: round; }
+  .pt          { fill: var(--ink); }
+  .pt-accent   { fill: var(--accent); }
+  .label       { font-family: var(--sans); font-size: 11px; font-weight: 700; fill: var(--ink); }
+  .label-accent{ font-family: var(--sans); font-size: 11px; font-weight: 700; fill: var(--accent); }
+  .callout     { stroke: var(--accent); stroke-width: 0.5; fill: none; }
+</style>
+</head>
+<body>
+  <article class="chart-block" role="figure" aria-label="China annual real GDP growth, 2010 to 2024, in percent">
+    <div class="red-rule" aria-hidden="true"></div>
+
+    <div class="kicker">China</div>
+    <h1>China&rsquo;s annual growth has more than halved in 15 years</h1>
+    <p class="standfirst">Real GDP, year-on-year change, 2010&ndash;2024, %</p>
+
+    <svg width="608" height="240" viewBox="0 0 608 240" xmlns="http://www.w3.org/2000/svg">
+      <!-- y axis: hairline ticks at 0, 2, 4, 6, 8, 10, 12 (no axis line) -->
+      <g aria-hidden="true">
+        <line x1="32" y1="20"  x2="36" y2="20"  class="tick" />
+        <line x1="32" y1="50"  x2="36" y2="50"  class="tick" />
+        <line x1="32" y1="80"  x2="36" y2="80"  class="tick" />
+        <line x1="32" y1="110" x2="36" y2="110" class="tick" />
+        <line x1="32" y1="140" x2="36" y2="140" class="tick" />
+        <line x1="32" y1="170" x2="36" y2="170" class="tick" />
+        <line x1="32" y1="200" x2="36" y2="200" class="tick" />
+        <text x="28" y="23"  text-anchor="end" class="axis-num">12</text>
+        <text x="28" y="53"  text-anchor="end" class="axis-num">10</text>
+        <text x="28" y="83"  text-anchor="end" class="axis-num">8</text>
+        <text x="28" y="113" text-anchor="end" class="axis-num">6</text>
+        <text x="28" y="143" text-anchor="end" class="axis-num">4</text>
+        <text x="28" y="173" text-anchor="end" class="axis-num">2</text>
+        <text x="28" y="203" text-anchor="end" class="axis-num">0</text>
+      </g>
+
+      <!-- x axis baseline (subtle hairline at y=0) -->
+      <line x1="36" y1="200" x2="600" y2="200" class="baseline" />
+
+      <!-- x axis: hairline ticks and biennial year labels -->
+      <g aria-hidden="true">
+        <line x1="60"     y1="200" x2="60"     y2="204" class="tick" />
+        <line x1="134.29" y1="200" x2="134.29" y2="204" class="tick" />
+        <line x1="208.57" y1="200" x2="208.57" y2="204" class="tick" />
+        <line x1="282.86" y1="200" x2="282.86" y2="204" class="tick" />
+        <line x1="357.14" y1="200" x2="357.14" y2="204" class="tick" />
+        <line x1="431.43" y1="200" x2="431.43" y2="204" class="tick" />
+        <line x1="505.71" y1="200" x2="505.71" y2="204" class="tick" />
+        <line x1="580"    y1="200" x2="580"    y2="204" class="tick" />
+        <text x="60"     y="220" text-anchor="middle" class="axis-yr">2010</text>
+        <text x="134.29" y="220" text-anchor="middle" class="axis-yr">2012</text>
+        <text x="208.57" y="220" text-anchor="middle" class="axis-yr">2014</text>
+        <text x="282.86" y="220" text-anchor="middle" class="axis-yr">2016</text>
+        <text x="357.14" y="220" text-anchor="middle" class="axis-yr">2018</text>
+        <text x="431.43" y="220" text-anchor="middle" class="axis-yr">2020</text>
+        <text x="505.71" y="220" text-anchor="middle" class="axis-yr">2022</text>
+        <text x="580"    y="220" text-anchor="middle" class="axis-yr">2024</text>
+      </g>
+
+      <!-- Data line: one series, ink, hairline stroke (1.25px).
+           Geometry: plot area x = 60..580 (15 years, 37.14px apart),
+           plot area y = 20..200 mapped from value 12..0 (180px for 12 units). -->
+      <polyline
+        points="60,41 97.14,56 134.29,81.5 171.43,83 208.57,89 245.71,95 282.86,96.5 320,96.5 357.14,98 394.29,110 431.43,167 468.57,74 505.71,155 542.86,122 580,125"
+        class="series" />
+
+      <!-- 15 data points; the 2020 trough is the single chromatic accent. -->
+      <g>
+        <circle cx="60"     cy="41"   r="3"   class="pt" />
+        <circle cx="97.14"  cy="56"   r="3"   class="pt" />
+        <circle cx="134.29" cy="81.5" r="3"   class="pt" />
+        <circle cx="171.43" cy="83"   r="3"   class="pt" />
+        <circle cx="208.57" cy="89"   r="3"   class="pt" />
+        <circle cx="245.71" cy="95"   r="3"   class="pt" />
+        <circle cx="282.86" cy="96.5" r="3"   class="pt" />
+        <circle cx="320"    cy="96.5" r="3"   class="pt" />
+        <circle cx="357.14" cy="98"   r="3"   class="pt" />
+        <circle cx="394.29" cy="110"  r="3"   class="pt" />
+        <circle cx="431.43" cy="167"  r="4.5" class="pt-accent" />
+        <circle cx="468.57" cy="74"   r="3"   class="pt" />
+        <circle cx="505.71" cy="155"  r="3"   class="pt" />
+        <circle cx="542.86" cy="122"  r="3"   class="pt" />
+        <circle cx="580"    cy="125"  r="3"   class="pt" />
+      </g>
+
+      <!-- Direct labels at the data points: 2010 start, 2024 end (ink). -->
+      <g>
+        <text x="60"  y="35"  text-anchor="middle" class="label">10.6%</text>
+        <text x="580" y="117" text-anchor="end"    class="label">5.0</text>
+      </g>
+
+      <!-- 2020 callout: the only chromatic accent (point + hairline + label). -->
+      <g>
+        <line x1="436" y1="167" x2="446" y2="167" class="callout" />
+        <text x="449" y="170" text-anchor="start" class="label-accent">2.2%</text>
+      </g>
+    </svg>
+
+    <p class="source">Source: National Bureau of Statistics of China</p>
+    <p class="note">Year-on-year change in real GDP; the 2020 trough reflects the pandemic shock.</p>
+  </article>
+</body>
+</html>
