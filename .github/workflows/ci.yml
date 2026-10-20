@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: structure check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Syntax check
+        run: python -m compileall -q economist-infographic/scripts
+
+      - name: Required skill files present
+        run: |
+          test -f economist-infographic/SKILL.md
+          test -f economist-infographic/references/visual-signature.md
+          test -f economist-infographic/references/tokens.md
+          test -f economist-infographic/scripts/build_ppt.py
+          echo "skill files OK"
+
+      - name: HTML examples intact
+        run: |
+          python - <<'PY'
+          import glob
+          from html.parser import HTMLParser
+
+          files = sorted(glob.glob("economist-infographic/examples/*.html"))
+          if not files:
+              raise SystemExit("no html examples found")
+          for f in files:
+              text = open(f, encoding="utf-8").read()
+              parser = HTMLParser(convert_charrefs=True)
+              parser.feed(text)
+              parser.close()
+              if len(text) < 500:
+                  raise SystemExit(f"{f} looks truncated ({len(text)} chars)")
+              if "<html" not in text.lower():
+                  raise SystemExit(f"{f} has no <html> tag")
+              print(f"  ok {f} ({len(text)} chars)")
+          print(f"{len(files)} HTML examples intact")
+          PY
