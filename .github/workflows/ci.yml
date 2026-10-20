@@ -20,14 +20,14 @@ jobs:
           python-version: '3.11'
 
       - name: Syntax check
-        run: python -m compileall -q economist-infographic/scripts
+        run: python -m compileall -q economist-infographic/economist-infographic/scripts
 
       - name: Required skill files present
         run: |
-          test -f economist-infographic/SKILL.md
-          test -f economist-infographic/references/visual-signature.md
-          test -f economist-infographic/references/tokens.md
-          test -f economist-infographic/scripts/build_ppt.py
+          test -f economist-infographic/economist-infographic/SKILL.md
+          test -f economist-infographic/economist-infographic/references/visual-signature.md
+          test -f economist-infographic/economist-infographic/references/tokens.md
+          test -f economist-infographic/economist-infographic/scripts/build_ppt.py
           echo "skill files OK"
 
       - name: HTML examples intact
@@ -36,7 +36,7 @@ jobs:
           import glob
           from html.parser import HTMLParser
 
-          files = sorted(glob.glob("economist-infographic/examples/*.html"))
+          files = sorted(glob.glob("economist-infographic/economist-infographic/examples/*.html"))
           if not files:
               raise SystemExit("no html examples found")
           for f in files:
